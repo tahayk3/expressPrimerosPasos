@@ -5,3 +5,11 @@ obtener un mejor codigo, permite desarrollar servidores de manera mas facil.
 Caracteristias de Express
 Routing, enfocado en alto rendimiento, nos permite desarrollar aplicaciones de node.js mas 
 rapidamente con codigo mas conciso
+
+REST
+Estilo de arquitectura de software para sistemas hipermedia distribuidos como la World Wide Web
+Significa: Represetational State Transfer
+
+RESTful API
+Es una API basada en REST
+
