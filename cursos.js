@@ -11,7 +11,7 @@ let infoCursos = {
             id: 2,
             titulo: 'Python intermedio',
             lenguaje: 'c++',
-            vistas: 15000,
+            vistas: 705,
             nivel: 'intermedio'
         },
         {
