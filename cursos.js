@@ -3,23 +3,23 @@ let infoCursos = {
         {
             id: 1,
             titulo: 'Aprende Python',
-            lenguaje: 'Python',
+            lenguaje: 'python',
             vistas: 15000,
             nivel: 'basico'
         },
         {
             id: 2,
             titulo: 'Python intermedio',
-            lenguaje: 'Python',
+            lenguaje: 'c++',
             vistas: 15000,
             nivel: 'intermedio'
         },
         {
             id: 3,
             titulo: 'JS',
-            lenguaje: 'Python',
+            lenguaje: 'python',
             vistas: 5635,
-            nivel: 'basico'
+            nivel: 'avanzado'
         }
     ],
     'matematicas':[
