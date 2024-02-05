@@ -1,0 +1,7 @@
+Express
+Es el framework web mas popular de Node.js, proporciona herramientas y una estructura para 
+obtener un mejor codigo, permite desarrollar servidores de manera mas facil.
+
+Caracteristias de Express
+Routing, enfocado en alto rendimiento, nos permite desarrollar aplicaciones de node.js mas 
+rapidamente con codigo mas conciso
