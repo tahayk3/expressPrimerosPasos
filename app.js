@@ -36,17 +36,23 @@ app.get("/api/cursos/programacion/:lenguaje",(req,res)=>{
     {
         return res.status(404).send(JSON.stringify("No encotrado"));
     }
+    //Utilizando parametros de query, se ordenan los datos en base a una propiedad del objeto
+    if(req.query.ordenar ==="vistas"){
+        return res.send(JSON.stringify(resultados.sort((a,b)=>b.vistas - a.vistas)))
+    }
     res.send(JSON.stringify(resultados));
+
     
 });
 
-//trabajando con paratros y el path matematicas
+//Filtrando con paratros y el path matematicas
 app.get("/api/cursos/matematicas/:tema",(req, res)=>{
     const tema = req.params.tema;
     const resultados = infoCursos.matematicas.filter(item => item.tema === tema);
     if(resultados.length === 0){
        return res.status(404).send("No se encontraron resultados");
     }
+
     res.send(JSON.stringify(resultados));
 });
 
