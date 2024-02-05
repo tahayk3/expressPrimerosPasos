@@ -2,8 +2,16 @@ const express = require("express");
 //Utilizamos este archivo para simular datos de una base de datos 
 const {infoCursos} =  require("./cursos.js");
 
+
 //Creamos un proyecto con express, por medio de la funcion express
 const app = express();
+
+//Routes, se utilizan para usar de manera mas facil las rutas(path)
+const routerProgramacion = express.Router();
+app.use('/api/cursos/programacion', routerProgramacion);
+
+const routerMatematicas = express.Router();
+app.use('/api/cursos/matematicas', routerMatematicas);
 
 /*Manejando rutas
 app: utilizar express
@@ -20,16 +28,16 @@ app.get("/api/cursos", (req,res)=>{
     res.send(infoCursos);
 });
 
-app.get("/api/cursos/programacion",(req,res)=>{
+routerProgramacion.get("/",(req,res)=>{
     res.send(infoCursos.programacion);
 });
 
-app.get("/api/cursos/matematicas",(req,res)=>{
+routerMatematicas.get("/",(req,res)=>{
     res.send(infoCursos.matematicas);
 });
 
 //para trabajar con parametros, se debe colocar : 
-app.get("/api/cursos/programacion/:lenguaje",(req,res)=>{
+routerProgramacion.get("/:lenguaje",(req,res)=>{
     const lenguaje = req.params.lenguaje;
     const resultados = infoCursos.programacion.filter(curso => curso.lenguaje === lenguaje);
     if(resultados.length === 0)
@@ -46,7 +54,7 @@ app.get("/api/cursos/programacion/:lenguaje",(req,res)=>{
 });
 
 //Filtrando con paratros y el path matematicas
-app.get("/api/cursos/matematicas/:tema",(req, res)=>{
+routerMatematicas.get("/:tema",(req, res)=>{
     const tema = req.params.tema;
     const resultados = infoCursos.matematicas.filter(item => item.tema === tema);
     if(resultados.length === 0){
@@ -57,7 +65,7 @@ app.get("/api/cursos/matematicas/:tema",(req, res)=>{
 });
 
 //Filtrando con mas de dos parametros
-app.get("/api/cursos/programacion/:lenguaje/:nivel", (req,res)=>{
+routerProgramacion.get("/:lenguaje/:nivel", (req,res)=>{
     const lenguaje = req.params.lenguaje;
     const nivel = req.params.nivel;
     const resultados = infoCursos.programacion.filter(item => item.lenguaje === lenguaje && item.nivel===nivel);
