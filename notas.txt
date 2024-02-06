@@ -13,3 +13,8 @@ Significa: Represetational State Transfer
 RESTful API
 Es una API basada en REST
 
+Funciones middleware
+se ejecutan: despues de recibir una solicitud y antes de enviar una respuesta.
+Tienen acceso al objeto de la solicitud, al objeto de la respuesta y al next(),
+una funcion que se llama para ejecutar el proximo middleware.
+
